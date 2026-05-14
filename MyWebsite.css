@@ -1,0 +1,566 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#f3e7d3;
+  background-image:url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+  color:#222;
+}
+
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+}
+
+/* NAVIGATION */
+
+#cs-navigation{
+  width:100%;
+  position:fixed;
+  top:20px;
+  left:0;
+  z-index:10000;
+  transition:0.3s;
+}
+
+#cs-navigation.cs-active{
+  top:0;
+}
+
+.cs-container{
+  width:92%;
+  max-width:1280px;
+  margin:auto;
+  background:#f8efe2;
+  border-radius:20px;
+  padding:18px 30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.cs-logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  font-size:1.5rem;
+  font-weight:700;
+  color:#7a3e1d;
+  text-decoration:none;
+}
+
+.logo-img{
+  width:50px;
+  height:50px;
+  object-fit:cover;
+  border-radius:50%;
+}
+
+.cs-nav{
+  display:flex;
+}
+
+.cs-ul{
+  display:flex;
+  align-items:center;
+  gap:2rem;
+  list-style:none;
+}
+
+.cs-li{
+  position:relative;
+}
+
+.cs-li-link{
+  text-decoration:none;
+  color:#2b1a12;
+  font-weight:500;
+  cursor:pointer;
+}
+
+/* DROPDOWN */
+
+.cs-drop-ul{
+  position:absolute;
+  top:3rem;
+  left:0;
+  width:220px;
+  background:#f8efe2;
+  list-style:none;
+  border-radius:16px;
+  padding:1rem 0;
+  box-shadow:0 15px 40px rgba(0,0,0,0.1);
+
+  opacity:0;
+  visibility:hidden;
+
+  transform:translateY(10px);
+
+  transition:0.3s;
+}
+
+.cs-dropdown:hover .cs-drop-ul{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+.cs-drop-link{
+  display:block;
+  padding:0.9rem 1.5rem;
+  text-decoration:none;
+  color:#3b2416;
+  transition:0.3s;
+}
+
+.cs-drop-link:hover{
+  background:#ead8c0;
+  color:#7a3e1d;
+}
+
+/* BUTTON */
+
+.cs-button-solid{
+  text-decoration:none;
+  background:#8b3f1f;
+  color:#fff;
+  padding:0.9rem 1.6rem;
+  border-radius:999px;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.cs-button-solid:hover{
+  background:#5f2410;
+}
+
+.cs-toggle{
+  display:none;
+  border:none;
+  background:none;
+  font-size:2rem;
+  cursor:pointer;
+  color:#7a3e1d;
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+
+  background:
+  linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+  url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1600&auto=format&fit=crop');
+
+  background-size:cover;
+  background-position:center;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+  color:white;
+}
+
+.hero-content h1{
+  font-size:5rem;
+  margin-bottom:1rem;
+}
+
+.hero-content p{
+  font-size:1.3rem;
+  margin-bottom:2rem;
+}
+
+.hero-btn{
+  display:inline-block;
+  text-decoration:none;
+  background:#8b3f1f;
+  color:#fff;
+  padding:1rem 2rem;
+  border-radius:12px;
+  box-shadow:0 10px 0 #5f2410;
+  transition:0.3s;
+}
+
+.hero-btn:hover{
+  transform:translateY(5px);
+  box-shadow:0 5px 0 #5f2410;
+}
+
+/* SERVICES */
+
+.services{
+  padding:120px 0;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:70px;
+}
+
+.section-title h2{
+  font-size:4rem;
+  color:#7a3e1d;
+  margin-bottom:20px;
+}
+
+.section-title p{
+  font-size:1.2rem;
+  color:#4d5f47;
+}
+
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:35px;
+}
+
+.service-card{
+  background:#f7f0e7;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  transition:0.4s;
+}
+
+.service-card:hover{
+  transform:translateY(-10px);
+}
+
+.service-card img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+}
+
+.service-content{
+  padding:35px;
+}
+
+.service-content h3{
+  font-size:2rem;
+  color:#5c704f;
+  margin-bottom:20px;
+}
+
+.service-content p{
+  font-size:1.1rem;
+  line-height:1.8;
+}
+
+/* GALLERY */
+
+.gallery{
+  padding:120px 0;
+}
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+.gallery-item{
+  position:relative;
+  overflow:hidden;
+  border-radius:20px;
+}
+
+.gallery-item img{
+  width:100%;
+  height:350px;
+  object-fit:cover;
+  display:block;
+  transition:0.5s;
+}
+
+.gallery-item img:hover{
+  transform:scale(1.05);
+}
+
+.overlay{
+  position:absolute;
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100%;
+
+  background:rgba(59,36,22,0.65);
+
+  color:white;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  opacity:0;
+
+  transition:0.3s;
+}
+
+.gallery-item:hover .overlay{
+  opacity:1;
+}
+
+/* REVIEWS */
+
+.reviews-section{
+  padding:120px 0;
+  text-align:center;
+}
+
+.reviews-title span{
+  color:#b45a2c;
+  letter-spacing:3px;
+  font-size:0.9rem;
+  font-weight:600;
+}
+
+.reviews-title h2{
+  font-size:4rem;
+  color:#2b1a12;
+  margin:20px 0;
+  line-height:1.1;
+}
+
+.reviews-title p{
+  max-width:700px;
+  margin:auto;
+  line-height:1.8;
+  color:#5f4a3d;
+}
+
+.reviews-grid{
+  margin-top:80px;
+
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px;
+}
+
+.review-card{
+  padding:20px;
+}
+
+.review-card img{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:20px;
+  border:4px solid #e2c8aa;
+}
+
+.review-card h3{
+  font-size:1.5rem;
+  color:#2b1a12;
+  margin-bottom:8px;
+}
+
+.review-card small{
+  display:block;
+  color:#a56a43;
+  margin-bottom:20px;
+  font-size:1rem;
+}
+
+.review-card p{
+  line-height:1.8;
+  color:#4b3a2f;
+  max-width:320px;
+  margin:auto;
+}
+
+.reviews-button{
+  margin-top:60px;
+}
+
+.review-btn{
+  display:inline-block;
+  text-decoration:none;
+  background:#b45a2c;
+  color:#fff;
+  padding:1rem 2.5rem;
+  border-radius:12px;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.review-btn:hover{
+  background:#7f3515;
+  transform:translateY(-3px);
+}
+
+/* FOOTER */
+
+#cs-footer-308{
+  padding:100px 0 40px;
+  background:#2a1b14;
+  background-image:url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+}
+
+.footer-box{
+  width:90%;
+  max-width:1500px;
+
+  margin:auto;
+
+  background:#dcc7b0;
+
+  border-radius:35px;
+
+  padding:70px;
+
+  display:grid;
+
+  grid-template-columns:2fr 1fr 1fr 1fr;
+
+  gap:60px;
+
+  box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+
+#cs-footer-308 .cs-logo{
+  font-size:2rem;
+  font-weight:700;
+  color:#5f2410;
+  text-decoration:none;
+  display:inline-block;
+  margin-bottom:25px;
+}
+
+#cs-footer-308 .cs-text{
+  color:#5a4639;
+  line-height:1.8;
+  max-width:350px;
+}
+
+.footer-nav{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+#cs-footer-308 .cs-nav-li{
+  list-style:none;
+}
+
+#cs-footer-308 .cs-header{
+  font-size:1.1rem;
+  font-weight:700;
+  color:#2b1a12;
+  margin-bottom:15px;
+  display:block;
+}
+
+#cs-footer-308 .cs-nav-link{
+  color:#5a4639;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+#cs-footer-308 .cs-nav-link:hover{
+  color:#8b3f1f;
+  transform:translateX(5px);
+}
+
+#cs-footer-308 .cs-bottom{
+  width:90%;
+  max-width:1200px;
+  margin:60px auto 0;
+
+  padding-top:30px;
+
+  border-top:1px solid rgba(255,255,255,0.1);
+
+  text-align:center;
+}
+
+#cs-footer-308 .cs-copyright{
+  color:#c8b29e;
+  font-size:0.95rem;
+}
+
+/* ANIMATION */
+
+.hidden{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.8s ease;
+}
+
+.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .cs-toggle{
+    display:block;
+  }
+
+  .cs-nav{
+    position:absolute;
+    top:100%;
+    left:0;
+
+    width:100%;
+
+    background:#f8efe2;
+
+    padding:2rem;
+
+    border-radius:20px;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:0.3s;
+  }
+
+  .cs-nav.cs-open{
+    opacity:1;
+    visibility:visible;
+  }
+
+  .cs-ul{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .cs-button-solid{
+    display:none;
+  }
+
+  .hero-content h1{
+    font-size:3rem;
+  }
+
+  .gallery-grid{
+    grid-template-columns:1fr;
+  }
+
+  .reviews-title h2{
+    font-size:2.8rem;
+  }
+
+  .footer-box{
+    grid-template-columns:1fr;
+    gap:40px;
+    padding:45px 30px;
+  }
+
+}
